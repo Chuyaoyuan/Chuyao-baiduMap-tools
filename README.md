@@ -23,4 +23,7 @@ Mysql配置在dbconfig.properties，修改成自己数据库的password
 ![long](https://raw.githubusercontent.com/Chuyaoyuan/Chuyao-baiduMap-tools/master/pic/file.png)
 上传错误示例
 ![error](https://raw.githubusercontent.com/Chuyaoyuan/Chuyao-baiduMap-tools/master/pic/%E9%94%99%E8%AF%AF2.png)
+xls文件格式
+![error](https://raw.githubusercontent.com/Chuyaoyuan/Chuyao-baiduMap-tools/master/pic/%E6%96%87%E4%BB%B6.png)
+
 over.
