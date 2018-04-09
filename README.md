@@ -3,9 +3,11 @@
 (预留，码代码中，，，)
 
 #基于Spring+SpringMVC+MyBatis+Maven+Bootstrap 3+Jsp(入门级)
+
 注：文件批量上传支持Excel文件 xls（2003）格式
-导入Eclips即可，环境为JDK1.8+Tomcat 8
-Mysql配置在dbconfig.properties，修改成自己数据库的password
+
+导入Eclips即可，环境为JDK1.8+Tomcat 8，
+Mysql配置在dbconfig.properties，修改成自己数据库的password，
 在DefaultController.java中查找'ak='，在其后添加自己的Baidumap Key，也可使用Baidu的（E4805d16520de693a3fe707cdc962045）
 
 #演示地址：http://demo.chuyaoyuan.com/baidumaptool
@@ -14,11 +16,12 @@ Mysql配置在dbconfig.properties，修改成自己数据库的password
 #测试数据
 
 国内;
-黑龙江省大庆市萨尔图区美兰街98号
-福建省龙岩市新罗区南环西路14号-1
-湖南省长沙市岳麓区金星北路一段517号
+黑龙江省大庆市萨尔图区美兰街98号，
+福建省龙岩市新罗区南环西路14号-1，
+湖南省长沙市岳麓区金星北路一段517号，
+
 国外;
-Marsiling Ln, Goshen Departmental Store, Singapore 
+Marsiling Ln, Goshen Departmental Store, Singapore ，
 台湾省台北市長沙街一段2號
 
 #部分截图（功能完善中）：
