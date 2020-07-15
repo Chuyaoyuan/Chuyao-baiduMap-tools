@@ -8,8 +8,7 @@
 
 导入Eclips即可，环境为JDK1.8+Tomcat 8，
 Mysql配置在dbconfig.properties，修改成自己数据库的password，建表脚本在sql文件夹中，
-在QueryController.java中查找'ak='，在其后添加自己的Baidumap Key，也可使用Baidu的（E4805d16520de693a3fe707cdc962045）
-在maptools.jsp中查找'ak='，在其后添加自己的Baidumap Key，也可使用Baidu的（E4805d16520de693a3fe707cdc962045）
+在QueryController.java中查找'ak='，在其后添加自己的Baidumap Key，也可使用Baidu的（E4805d16520de693a3fe707cdc962045）,在maptools.jsp中查找'ak='，在其后添加自己的Baidumap Key，也可使用Baidu的（E4805d16520de693a3fe707cdc962045）
 
 #演示地址：http://demo.chuyaoyuan.com/baidumaptool
 用户名/密码：admin/123456
