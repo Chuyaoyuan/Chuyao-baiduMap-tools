@@ -17,7 +17,7 @@
 	height: 500px;
 }
 	</style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DQHXdUy9E5RimyLTqIUGd0EbzQaImj1P"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E4805d16520de693a3fe707cdc962045"></script>
    <script type="text/javascript" src="content/fileinput/fileinput.js"></script>
 <script type="text/javascript" src="content/fileinput/fileinput_locale_zh.js"></script>
       <script type="text/javascript" charset="utf8" src="content/jquery.dataTables.js"></script>

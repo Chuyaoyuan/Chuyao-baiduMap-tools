@@ -1,9 +1,7 @@
 package com.cn.yaomvc.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 
 import com.cn.yaomvc.pojo.User;
 

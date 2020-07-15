@@ -1,7 +1,5 @@
 package com.cn.yaomvc.utils;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -37,7 +35,8 @@ public class ReadExcelTest3 {
      * @param InputStream
      * @return String 表头内容的数组
      */
-    public String[] readExcelTitle(InputStream is) {
+    @SuppressWarnings("deprecation")
+	public String[] readExcelTitle(InputStream is) {
         try {
             fs = new POIFSFileSystem(is);
             wb = new HSSFWorkbook(fs);
@@ -62,7 +61,8 @@ public class ReadExcelTest3 {
      * @param InputStream
      * @return Map 包含单元格数据内容的Map对象
      */
-    public List readExcelContent(InputStream is) {
+    @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
+	public List readExcelContent(InputStream is) {
      
         Map<String, Object> map1 = new HashMap<String, Object>(); 
         String str = "";
@@ -88,11 +88,9 @@ public class ReadExcelTest3 {
             
             row = sheet.getRow(i);
         
-//             Long seq;
              String duizhaoxmname = "";
 
-//             String createtime;
-//             String updatetime;
+
    
     
             try {
@@ -123,7 +121,8 @@ public class ReadExcelTest3 {
      * @param cell Excel单元格
      * @return String 单元格数据内容
      */
-    private String getStringCellValue(HSSFCell cell) {
+    @SuppressWarnings("unused")
+	private String getStringCellValue(HSSFCell cell) {
         String strCell = "";
         switch (cell.getCellType()) {
         case HSSFCell.CELL_TYPE_STRING:
@@ -158,7 +157,8 @@ public class ReadExcelTest3 {
      *            Excel单元格
      * @return String 单元格数据内容
      */
-    private String getDateCellValue(HSSFCell cell) {
+    @SuppressWarnings({ "unused", "deprecation" })
+	private String getDateCellValue(HSSFCell cell) {
         String result = "";
         try {
             int cellType = cell.getCellType();
@@ -179,7 +179,8 @@ public class ReadExcelTest3 {
         return result;
     }
     //数字处理
-    private  String getValue(HSSFCell hssfCell) {
+    @SuppressWarnings("static-access")
+	private  String getValue(HSSFCell hssfCell) {
         if (hssfCell.getCellType() == hssfCell.CELL_TYPE_BOOLEAN) {
             // 返回布尔类型的值
             return String.valueOf(hssfCell.getBooleanCellValue());
@@ -206,7 +207,8 @@ public class ReadExcelTest3 {
      * @param cell
      * @return
      */
-    private String getCellFormatValue(HSSFCell cell) {
+    @SuppressWarnings({ "deprecation", "unused" })
+	private String getCellFormatValue(HSSFCell cell) {
         String cellvalue = "";
         if (cell != null) {
             // 判断当前Cell的Type
@@ -251,39 +253,8 @@ public class ReadExcelTest3 {
     }
 
     public static void main(String[] args) {
-    	String savePath = "D:/uploadceshi20170711";
-        try {
+ 
             // 对读取Excel表格标题测试
-        	 Map<String, Object> map = new HashMap<String, Object>(); 
-            InputStream is = new FileInputStream(savePath+"/数据提交2017-06-08.xls");
-            ReadExcelTest3 excelReader = new ReadExcelTest3();
-            String[] title = excelReader.readExcelTitle(is);
-            System.out.println("获得Excel表格的标题:");
-            for (String s : title) {
-                System.out.print(s + " ");
-            }
-
-            // 对读取Excel表格内容测试
-            System.out.println("");
-            InputStream is2 = new FileInputStream(savePath+"/数据提交2017-06-08.xls");
-//            List<Sjzxtjb> list=new ArrayList<Sjzxtjb>(); 
-//            list= excelReader.readExcelContent(is2);
-//            System.out.println("返回长度：" + list.size());
-//           // System.out.println("第三个元素：" + list.get(3).toString());
-//            System.out.println("获得Excel表格的内容:");
-//            for (int i = 0; i < list.size(); i++) {
-//            	Sjzxtjb map1 =list.get(i);
-//            	System.out.println(map1.getTijiaotime());
-//            	System.out.println(map1.getTjren());
-//            	System.out.println(map1.getRktime());
-//            	System.out.println(map1.getCreatetime());
-////                System.out.println(list.get(i).toString());
-//   
-//            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("未找到指定路径的文件!");
-            e.printStackTrace();
-        }
+      
     }
 }

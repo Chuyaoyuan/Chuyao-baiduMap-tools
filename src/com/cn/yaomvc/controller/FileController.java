@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +29,7 @@ public class FileController {
 	/*
 	 * 创建renwu任务1111
 	 */
+	@SuppressWarnings({ "unused", "unchecked", "static-access" })
 	@ResponseBody
 	@RequestMapping(value="/uploadfile",produces="text/html; charset=UTF-8")
 	public String uploadfile1(HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session)
@@ -40,7 +38,7 @@ public class FileController {
 		String diqu = request.getParameter("diqu");
 		System.out.println(diqu);
 		  JSONArray ssss = new JSONArray();
-		  List listHs = new ArrayList<>();
+		  List<Object> listHs = new ArrayList<>();
 			JSONObject obj = new JSONObject();
 		response.setContentType("text/html");
 		// 设置响应所采用的编码方式

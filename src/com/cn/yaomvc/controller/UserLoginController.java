@@ -1,9 +1,5 @@
 package com.cn.yaomvc.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,23 +17,10 @@ import com.cn.yaomvc.utils.JiamiMD5;
 
 @Controller
 public class UserLoginController {
-	   SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			/*
-			 * 获取统计日期前一天
-			 */
-			public static String getlosedateTJRQ() {
-				Calendar calendar = Calendar.getInstance();
-				calendar.add(Calendar.DATE, -1); // 得到前一天
-				java.util.Date date = calendar.getTime();
-				java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd");
-				return df.format(date);
-
-			}
+	
 			
 	@Resource
 	private IUserService userService;
-
-
 	
 	@RequestMapping("/checkLogin")
 	public String toIndexLogin(HttpServletRequest request,Model model, HttpSession session){

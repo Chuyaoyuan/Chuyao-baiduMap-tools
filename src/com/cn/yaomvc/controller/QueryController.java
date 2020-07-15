@@ -18,9 +18,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONArray;
-import com.cn.yaomvc.pojo.User;
-
 import net.sf.json.JSONObject;
 
 @Controller
@@ -82,13 +79,14 @@ public class QueryController {
 	
 	
 	// 根据经纬度获取地址信息
+	@SuppressWarnings("unused")
 	public static String huoqu_address_info(String x,String y)
 			throws UnsupportedEncodingException {
 		String tempHtml  = "";
 		HttpClient httpClient = new HttpClient();
 
 		String city = 	URLEncoder.encode("中山市", "UTF-8");
-		String url = "http://api.map.baidu.com/geocoder/v2/?location="+y+","+x+"&output=json&pois=1&ak=";
+		String url = "http://api.map.baidu.com/geocoder/v2/?location="+y+","+x+"&output=json&pois=1&ak=E4805d16520de693a3fe707cdc962045";
 		GetMethod getMethod = new GetMethod(url);
 		getMethod.addRequestHeader("Host", "api.map.baidu.com");
 		getMethod.addRequestHeader("User-Agent",
@@ -171,6 +169,7 @@ public class QueryController {
 	}
 	
 	// 根据地址获取任务经纬度信息
+	@SuppressWarnings("unused")
 	public static String huoqu_lng_lat_info(String address,String diqu)
 			throws UnsupportedEncodingException {
 		String tempHtml  = "";
@@ -182,7 +181,7 @@ public class QueryController {
 		String url = "";
 		
 		if(diqu.equals("guonei")) {
-			url ="http://api.map.baidu.com/?qt=s&c=167&wd="+address+"&rn=10&ie=utf-8&oue=1&fromproduct=jsapi&res=api&ak=";
+			url ="http://api.map.baidu.com/?qt=s&c=167&wd="+address+"&rn=10&ie=utf-8&oue=1&fromproduct=jsapi&res=api&ak=E4805d16520de693a3fe707cdc962045";
 		}else {
 			 url = "http://map.baidu.com/?newmap=1&reqflag=pcmap&biz=1&from=webmap&da_par=after_baidu&pcevaname=pc4.1&qt=s&da_src=searchBox.button&wd="+address+"&c=9002&src=0&wd2=&pn=0&sug=0&l=19";
 		}
@@ -265,6 +264,7 @@ public class QueryController {
 	}
 	
 	// 根据地址获取任务经纬度信息
+	@SuppressWarnings("unused")
 	public static String huoqu_lng_lat_infoCode(String address,String code)
 			throws UnsupportedEncodingException {
 		String tempHtml  = "";
@@ -274,7 +274,7 @@ public class QueryController {
 		address = URLEncoder.encode(address, "UTF-8");
 		String city = 	URLEncoder.encode("中山市", "UTF-8");
 		String url = "";
-		 url =" http://api.map.baidu.com/?qt=s&c="+code+"&wd="+address+"&rn=10&ie=utf-8&oue=1&fromproduct=jsapi&res=api&ak=";
+		 url =" http://api.map.baidu.com/?qt=s&c="+code+"&wd="+address+"&rn=10&ie=utf-8&oue=1&fromproduct=jsapi&res=api&ak=E4805d16520de693a3fe707cdc962045";
 		
 		
 		System.out.println(url);
