@@ -24,10 +24,14 @@ import com.cn.yaomvc.utils.ReadExcelTest3;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+/**
+ * 文件Controller
+ */
 @Controller
 public class FileController {
 	/*
-	 * 创建renwu任务1111
+	 * 上传文件
 	 */
 	@SuppressWarnings({ "unused", "unchecked", "static-access" })
 	@ResponseBody

@@ -14,14 +14,23 @@ import com.cn.yaomvc.pojo.User;
 import com.cn.yaomvc.service.IUserService;
 import com.cn.yaomvc.utils.JiamiMD5;
 
-
+/**
+ * 用户Controller
+ */
 @Controller
 public class UserLoginController {
 	
 			
 	@Resource
 	private IUserService userService;
-	
+
+	/**
+	 * 验证登录
+	 * @param request
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/checkLogin")
 	public String toIndexLogin(HttpServletRequest request,Model model, HttpSession session){
 	
@@ -59,7 +68,12 @@ public class UserLoginController {
 		}
 	}
 	}
-	
+
+	/**
+	 * 退出
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/loginout")
     public ModelAndView loginout(HttpSession session){
         session.invalidate();

@@ -20,8 +20,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.sf.json.JSONObject;
 
+/**
+ * 查询Controller
+ */
 @Controller
 public class QueryController {
+
+	/**
+	 *
+	 * @param request
+	 * @param model
+	 * @param session
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
 	@ResponseBody
 	@RequestMapping("/queryaddress")
 	public String queryaddress(HttpServletRequest request,Model model, HttpSession session) throws UnsupportedEncodingException{
@@ -49,7 +61,15 @@ public class QueryController {
 		System.out.println(obj.toString());
 		return obj.toString();	
 	}
-	
+
+	/**
+	 *
+	 * @param request
+	 * @param model
+	 * @param session
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
 	@ResponseBody
 	@RequestMapping("/querylng_lat")
 	public String querylng_lat(HttpServletRequest request,Model model, HttpSession session) throws UnsupportedEncodingException{
@@ -76,9 +96,15 @@ public class QueryController {
 		System.out.println(obj.toString());
 		return obj.toString();	
 	}
-	
-	
-	// 根据经纬度获取地址信息
+
+
+	/**
+	 * 根据经纬度获取地址信息
+	 * @param x
+	 * @param y
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
 	@SuppressWarnings("unused")
 	public static String huoqu_address_info(String x,String y)
 			throws UnsupportedEncodingException {
