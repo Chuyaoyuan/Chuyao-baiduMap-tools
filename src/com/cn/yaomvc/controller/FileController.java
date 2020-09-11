@@ -94,8 +94,7 @@ public class FileController {
 					System.out.println("没有文件");
 				}
 			}
-			System.out.println("进来了,处理文件");
-			System.out.println("等待1秒");
+			System.out.println("进来了,处理文件，等待1秒");
 			Thread.sleep(1000);
 			System.out.println(listImagePath.size());
 			//response.getWriter().print(files.size());
