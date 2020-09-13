@@ -104,12 +104,9 @@ public class FileController {
 				File file = new File(pathRoot + "/" + path);
 
 				ReadExcelTest3 excelReader = new ReadExcelTest3();
-				
 				InputStream is2 = new FileInputStream(pathRoot + "/" + path);
-				
 				 listHs = excelReader.readExcelContent(is2);
 				if (listHs.size() > 0) {
-			
 					String flag = "0";
 					for (int i = 0; i < listHs.size(); i++) {
 						 JSONObject map = new JSONObject(); 
@@ -135,11 +132,9 @@ public class FileController {
 				}
 			} else {
 				msg = "非法请求！";
-				//response.getWriter().print("非法请求");
 			}
 		} else {
 			msg = "submit，parame_bdc1参数不正确！";
-			//response.getWriter().print("非法请求");
 		}
 
 		System.out.println(msg);
