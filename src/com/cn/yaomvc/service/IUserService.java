@@ -1,9 +1,8 @@
 package com.cn.yaomvc.service;
 
-import java.util.ArrayList;
-
-
 import com.cn.yaomvc.pojo.User;
+
+import java.util.ArrayList;
 
 public interface IUserService {
 	

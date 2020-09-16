@@ -1,18 +1,17 @@
 package com.cn.yaomvc.controller;
 
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.cn.yaomvc.pojo.User;
+import com.cn.yaomvc.service.IUserService;
+import com.cn.yaomvc.utils.JiamiMD5;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cn.yaomvc.pojo.User;
-import com.cn.yaomvc.service.IUserService;
-import com.cn.yaomvc.utils.JiamiMD5;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 用户Controller
@@ -20,7 +19,6 @@ import com.cn.yaomvc.utils.JiamiMD5;
 @Controller
 public class UserLoginController {
 	
-			
 	@Resource
 	private IUserService userService;
 
@@ -40,7 +38,7 @@ public class UserLoginController {
 		System.out.println(password);
 		if(username==null||password==null||"".equals(username)||"".equals(password)){
 			System.err.println( "登录失败");
-			 request.getSession().invalidate();
+			request.getSession().invalidate();
 			model.addAttribute("msg", "登录失败");
 			return "index";
 		}else{

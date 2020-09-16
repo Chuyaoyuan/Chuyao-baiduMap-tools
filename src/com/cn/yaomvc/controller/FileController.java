@@ -1,5 +1,18 @@
 package com.cn.yaomvc.controller;
 
+import com.cn.yaomvc.utils.ReadExcelTest3;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,29 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-
-import com.cn.yaomvc.utils.ReadExcelTest3;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 /**
  * 文件Controller
  */
 @Controller
 public class FileController {
 	/*
-	 * 上传文件
+	 * 上传文件Controller
 	 */
 	@SuppressWarnings({ "unused", "unchecked", "static-access" })
 	@ResponseBody
@@ -134,7 +131,7 @@ public class FileController {
 				msg = "非法请求！";
 			}
 		} else {
-			msg = "submit，parame_bdc1参数不正确！";
+			msg = "数不正确！";
 		}
 
 		System.out.println(msg);

@@ -1,25 +1,13 @@
 package com.cn.yaomvc.utils;
 
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-
-
-
-
+import java.util.*;
 
 /**
  * 操作Excel表格的功能类
@@ -32,7 +20,7 @@ public class ReadExcelTest3 {
 
     /**
      * 读取Excel表格表头的内容
-     * @param InputStream
+     * @param is
      * @return String 表头内容的数组
      */
     @SuppressWarnings("deprecation")
@@ -58,7 +46,7 @@ public class ReadExcelTest3 {
 
     /**
      * 读取Excel数据内容
-     * @param InputStream
+     * @param is
      * @return Map 包含单元格数据内容的Map对象
      */
     @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
@@ -85,28 +73,19 @@ public class ReadExcelTest3 {
         // 正文内容应该从第二行开始,第一行为表头的标题
      // 这次没有表头，从第一行开始
         for (int i = 0; i <= rowNum; i++) {
-            
             row = sheet.getRow(i);
-        
              String duizhaoxmname = "";
-
-
-   
-    
             try {
                 int idx = 0;
                 //idx++;
                 duizhaoxmname = getCellFormatValue(row.getCell(idx));
-
                 if(!duizhaoxmname.replace(" ", "").equals("")){
-                
                 resultList.add(duizhaoxmname);
                 }else{
                 	System.out.println("有为空，失败");
                 	resultList.clear();
                 	break;
                 }
-                
             } catch (Exception ex) {
                 System.out.print(ex);
             }
@@ -114,7 +93,6 @@ public class ReadExcelTest3 {
         return resultList;
     }
      
-
     /**
      * 获取单元格数据内容为字符串类型的数据
      * 
@@ -178,7 +156,12 @@ public class ReadExcelTest3 {
         }
         return result;
     }
-    //数字处理
+
+    /**
+     * 数字处理
+     * @param hssfCell
+     * @return
+     */
     @SuppressWarnings("static-access")
 	private  String getValue(HSSFCell hssfCell) {
         if (hssfCell.getCellType() == hssfCell.CELL_TYPE_BOOLEAN) {
@@ -219,15 +202,12 @@ public class ReadExcelTest3 {
                 // 判断当前的cell是否为Date
                 if (HSSFDateUtil.isCellDateFormatted(cell)) {
                     // 如果是Date类型则，转化为Data格式
-                    
                     //方法1：这样子的data格式是带时分秒的：2011-10-12 0:00:00
                     cellvalue = cell.getDateCellValue().toLocaleString();
-                    
                     //方法2：这样子的data格式是不带带时分秒的：2011-10-12
                     Date date = cell.getDateCellValue();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     //cellvalue = sdf.format(date);
-                    
                 }
                 // 如果是纯数字
                 else {
@@ -250,11 +230,5 @@ public class ReadExcelTest3 {
         }
         return cellvalue;
 
-    }
-
-    public static void main(String[] args) {
- 
-            // 对读取Excel表格标题测试
-      
     }
 }

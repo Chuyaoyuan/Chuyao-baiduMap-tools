@@ -1,15 +1,6 @@
 package com.cn.yaomvc.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.zip.GZIPInputStream;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import net.sf.json.JSONObject;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -18,7 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import net.sf.json.JSONObject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.zip.GZIPInputStream;
 
 /**
  * 查询Controller
@@ -111,7 +109,7 @@ public class QueryController {
 		String tempHtml  = "";
 		HttpClient httpClient = new HttpClient();
 
-		String city = 	URLEncoder.encode("中山市", "UTF-8");
+		String city = 	URLEncoder.encode("大连市", "UTF-8");
 		String url = "http://api.map.baidu.com/geocoder/v2/?location="+y+","+x+"&output=json&pois=1&ak=E4805d16520de693a3fe707cdc962045";
 		GetMethod getMethod = new GetMethod(url);
 		getMethod.addRequestHeader("Host", "api.map.baidu.com");
@@ -129,9 +127,7 @@ public class QueryController {
 		// System.out.println("20秒没反应关闭");
 		StringBuffer sb = new StringBuffer();
 		try {
-			// System.out.println(url);
 			int stat = httpClient.executeMethod(getMethod);
-			// System.err.println(stat);
 			BufferedReader reader = null;
 			try {
 				GZIPInputStream gzipin = new GZIPInputStream(getMethod.getResponseBodyAsStream());
@@ -269,8 +265,6 @@ public class QueryController {
 						
 						return x+","+y;
 						}
-						
-						
 					} else {
 						System.out.println("arrayresultone为null");
 						return null;

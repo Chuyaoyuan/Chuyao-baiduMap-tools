@@ -23,22 +23,5 @@ public class JiamiMD5 {
 	    }
 		return str;
 	}
-	
-	public static void main(String[] args) {
-		
-		String ss= "123456";
-		System.out.println(getMD5(ss));
-		
-		
-//		String ss= "kk9516284ll";
-//		System.out.println(getMD5(ss));
-//		String mima= getMD5(ss);
-//		if(getMD5("123456").equals(mima)){
-//			System.out.println("mima正确");
-//		}else{
-//			System.out.println("mima失败");
-//		}
-		
-	}
 
 }
