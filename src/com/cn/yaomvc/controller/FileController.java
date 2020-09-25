@@ -75,9 +75,20 @@ public class FileController {
                         if (contentType.equals("application/vnd.ms-excel")) {
                             System.out.println("文件格式正确");
 
+                            //对文文件的全名进行截取然后在后缀名进行删选。
+                            int begin = mf.getOriginalFilename().indexOf(".");
+                            int last = mf.getOriginalFilename().length();
+                            //获得文件后缀名
+                            String typeLast = mf.getOriginalFilename().substring(begin, last);
+
                             // 获得文件后缀名称
                             String imageName = contentType.substring(contentType.indexOf("/") + 1);
-                            path = "content/" + uuid + ".xls";
+                            if (imageName.endsWith(".xlsx")) {
+                                path = "content/" + uuid + ".xlsx";
+                            }else{
+                                path = "content/" + uuid + ".xls";
+                            }
+
                             mf.transferTo(new File(pathRoot + "/" + path));
                             listImagePath.add(path);
                             // System.out.println(path);
