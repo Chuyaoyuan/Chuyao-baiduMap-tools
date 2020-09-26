@@ -91,7 +91,6 @@ public class FileController {
 
                             mf.transferTo(new File(pathRoot + "/" + path));
                             listImagePath.add(path);
-                            // System.out.println(path);
                             System.out.println(pathRoot + "/" + path);
                             System.out.println(basePath + path);
                         } else {
@@ -105,7 +104,6 @@ public class FileController {
                 System.out.println("进来了,处理文件，等待1秒");
                 Thread.sleep(1000);
                 System.out.println(listImagePath.size());
-                //response.getWriter().print(files.size());
                 if (listImagePath.size() > 0) {
                     System.out.println("有文件，");
                     System.out.println(pathRoot + "/" + path);
@@ -119,12 +117,12 @@ public class FileController {
                         for (int i = 0; i < listHs.size(); i++) {
                             JSONObject map = new JSONObject();
                             String map1 = (String) listHs.get(i);
-                            String sss = new QueryController().huoqu_lng_lat_info(map1, diqu);
+                            String lnglat = new QueryController().huoqu_lng_lat_info(map1, diqu);
                             map.put("adress", map1);
-                            if (sss == null) {
-                                sss = "";
+                            if (lnglat == null) {
+                                lnglat = "";
                             }
-                            map.put("xy", sss);
+                            map.put("xy", lnglat);
                             ssss.add(map);
                         }
                         msg = ssss.toString();
