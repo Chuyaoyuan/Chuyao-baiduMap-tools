@@ -140,17 +140,15 @@ public class FileController {
                 msg = "非法请求！";
             }
         } else {
-            msg = "数不正确！";
+            msg = "数据不正确！";
         }
 
         System.out.println(msg);
         if (msg.equals("成功")) {
-            //msg= msg+","+filename;
             obj.put("data", ssss);
             obj.put("status", 1);
         } else {
             msg = "请检查你上传的文件内容以及格式，请查看正确后上传。";
-            //obj.put("data", listHs);
             obj.put("status", 0);
             obj.put("msg", msg);
         }

@@ -220,12 +220,9 @@ public class QueryController {
         getMethod.addRequestHeader("Accept-Charset", "utf-8, iso-8859-1, utf-16, *;q=0.7");
 
         httpClient.getHttpConnectionManager().getParams().setSoTimeout(20000);
-        // System.out.println("20秒没反应关闭");
         StringBuffer sb = new StringBuffer();
         try {
-            // System.out.println(url);
             int stat = httpClient.executeMethod(getMethod);
-            // System.err.println(stat);
             BufferedReader reader = null;
             try {
                 GZIPInputStream gzipin = new GZIPInputStream(getMethod.getResponseBodyAsStream());
@@ -253,8 +250,10 @@ public class QueryController {
                         //zhixing
                         return huoqu_lng_lat_infoCode(address, arrayresultone.getString("code"));
                     } else {
-                        String x = "";// lat float 纬度值poi经纬度坐标
-                        String y = "";// lng float 经度值poi经纬度坐标
+                        // lat float 纬度值poi经纬度坐标
+                        String x = "";
+                        // lng float 经度值poi经纬度坐标
+                        String y = "";
                         x = arrayresultone.getString("x");
                         y = arrayresultone.getString("y");
                         x = x.substring(0, x.length() - 2) + "." + x.substring(x.length() - 2, x.length());
