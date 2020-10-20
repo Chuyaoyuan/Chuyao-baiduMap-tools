@@ -40,7 +40,6 @@
         <input type="password" id="password"  name="password" class="form-control" placeholder="Password" required>
         </div>
         <button class="btn  btn-primary btn-block" type="submit"  style="margin-top: 15px;">登陆</button>
-        
          <div style="margin-top: 15px;color:#F00;" id="error" >
         </div>
       </form>
@@ -48,7 +47,7 @@
 </div>
 <div class="panel panel-default col-center-block" style="margin-top: 2px;">
  <p class="text-center" style="margin-top: 8px;">联系我：<a>chuyaoyuan@gmail.com</a> .</p>
-    <p class="text-center" style="margin-top: 8px;">yaoyuan.io & chuyaoyuan.com</a> .</p>
+    <p class="text-center" style="margin-top: 8px;"><a>yaoyuan.io</a> & <a>www.chuyaoyuan.com</a> .</p>
 
 
 </div>
