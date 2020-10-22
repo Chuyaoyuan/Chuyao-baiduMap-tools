@@ -2,7 +2,7 @@
 百度地图经纬度和地址转换小工具（web）
 (预留，码代码中。。。)
 
-#基于Spring+SpringMVC+MyBatis+Maven+Bootstrap 3+Jsp(入门级)
+#基于Spring+SpringMVC+MyBatis+Bootstrap 3+Jsp(入门级)
 
 注：文件批量上传支持Excel文件 xls（2003）格式
 
