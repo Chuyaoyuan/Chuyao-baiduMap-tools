@@ -5,7 +5,7 @@
 国外地址查询会报错，可以使用官方（百度拾取坐标系统）来搜索国外地址了（只能单个查询）
 http://api.map.baidu.com/lbsapi/getpoint/index.html
 
-#基于Spring+SpringMVC+MyBatis+Maven+Bootstrap 3+Jsp(入门级)
+#基于Spring+SpringMVC+MyBatis+Bootstrap 3+Jsp(入门级)
 
 注：文件批量上传支持Excel文件 xls（2003）格式
 
