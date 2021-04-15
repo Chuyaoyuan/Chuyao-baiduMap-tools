@@ -1,6 +1,9 @@
 # Chuyao-baiduMap-tools
 百度地图经纬度和地址转换小工具（web）
-(预留，码代码中。。。)
+
+2020更新：
+国外地址查询会报错，可以使用官方（百度拾取坐标系统）来搜索国外地址了（只能单个查询）
+http://api.map.baidu.com/lbsapi/getpoint/index.html
 
 #基于Spring+SpringMVC+MyBatis+Maven+Bootstrap 3+Jsp(入门级)
 
@@ -21,8 +24,7 @@ Mysql配置在dbconfig.properties，修改成自己数据库的password，建表
 湖南省长沙市岳麓区金星北路一段517号，
 
 国外;
-Marsiling Ln, Goshen Departmental Store, Singapore ，
-台湾省台北市長沙街一段2號
+Marsiling Ln, Goshen Departmental Store, Singapore 
 
 #部分截图（功能完善中）：
 
