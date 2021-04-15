@@ -1,0 +1,41 @@
+# Java class files
+*.class
+
+# Generated files
+*/bin/
+*/gen/
+*/out/
+
+# Log Files
+*.log
+
+#some local files
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
+
+# Eclipse Project files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA Project files
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+bin/
+gen/
+local.properties
+target/
+hsf.lock
+rebel.xml
+/disconf
+/html
+
+# VS Code files
+.vscode
